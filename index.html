@@ -3,8 +3,10 @@
     <title>The Binding of Isaac</title>
     <link rel="shortcut icon" type="image/png" href="download.png"/>
     <script>
-        window.onbeforeunload = function() {
-            return "Are you sure you want me to die?";
+        window.onbeforeunload = function(event) {
+            const message = "Are you sure you want me to die?";
+            event.returnValue = message; // For most browsers
+            return message; // For older browsers
         };
     </script>
   </head>
